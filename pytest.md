@@ -1,3 +1,155 @@
+## pytest 命令规则
+
+### 1. 运行基本的测试
+运行所有测试：
+
+ ```bash
+pytest
+ ```
+该命令会默认在当前目录及子目录下递归地查找以 test_ 开头或 _test 结尾的文件并执行其中的测试用例。
+
+指定某个测试文件：
+
+ ```bash
+pytest test_sample.py
+ ```
+仅运行指定文件中的测试用例。
+
+指定目录：
+
+ ```bash
+pytest tests/
+ ```
+运行 tests/ 目录下的所有测试文件。
+
+运行某个测试函数：
+
+ ```bash
+pytest test_sample.py::test_addition
+ ```
+仅运行 test_sample.py 文件中的 test_addition 测试函数。
+
+### 2. 运行测试时的常用选项
+显示详细的输出：
+
+ ```bash
+pytest -v
+ ```
+显示每个测试用例的详细信息，包括测试函数的名称、状态（通过、失败等）和输出。
+
+显示测试失败的详细信息：
+
+ ```bash
+pytest --tb=short
+pytest --tb=long
+pytest --tb=auto
+pytest --tb=none
+--tb=short：简洁的回溯信息。
+--tb=long：详细的回溯信息。
+--tb=auto：自动选择合适的回溯格式。
+--tb=none：不显示回溯。
+ ```
+只运行失败的测试：
+
+ ```bash
+pytest --last-failed
+ ```
+仅运行上一次运行时失败的测试用例。
+
+停止运行测试（N 次失败后退出）：
+
+ ```bash
+pytest --maxfail=2
+ ```
+该选项会在出现 2 次失败后停止运行。
+
+禁用警告信息：
+
+ ```bash
+pytest --disable-warnings
+ ```
+禁用警告信息的输出。
+
+运行标记的测试：
+
+ ```bash
+pytest -k "expression"
+ ```
+运行符合指定表达式的测试。例如，运行包含 addition 的测试函数：
+
+ ```bash
+pytest -k "addition"
+ ```
+运行带有特定标记的测试：
+
+ ```bash
+pytest -m "slow"
+ ```
+仅运行标记为 slow 的测试用例。
+
+跳过某些测试：
+
+ ```bash
+pytest --skip
+ ```
+跳过标记为 @pytest.mark.skip 的测试。
+
+### 3. 测试输出与日志
+保存日志信息：
+
+ ```bash
+pytest --log-cli-level=INFO
+ ```
+配置日志输出级别，支持 DEBUG, INFO, WARNING, ERROR, CRITICAL 等。
+
+保存测试报告到文件：
+
+ ```bash
+pytest --html=report.html
+ ```
+将测试结果保存为 HTML 格式的报告。
+
+保存 JUnit 格式的测试报告：
+
+ ```bash
+pytest --junitxml=report.xml
+ ```
+生成一个 JUnit 格式的 XML 报告，通常用于与 CI/CD 工具集成。
+
+### 4. 运行特定配置的测试
+指定测试配置文件（例如 pytest.ini）：
+ ```bash
+pytest --confcutdir=path/to/config
+ ```
+仅加载位于指定目录及其子目录中的配置文件。
+
+### 5. 运行前置和后置操作
+运行测试前/后执行的操作：
+ ```bash
+pytest --setup-show
+ ```
+在测试执行前，显示夹具的设置过程。
+常用 pytest 选项总结：
+选项	描述
+
+ ```
+pytest	运行当前目录下所有测试文件
+pytest -v	显示详细输出
+pytest --tb=short	显示简洁的回溯信息
+pytest --tb=long	显示详细的回溯信息
+pytest --disable-warnings	禁用警告信息
+pytest --maxfail=3	当失败次数超过指定次数时停止运行
+pytest --last-failed	只运行上次运行失败的测试
+pytest -k "expression"	运行符合指定表达式的测试
+pytest --html=report.html	生成 HTML 格式的测试报告
+pytest --junitxml=report.xml	生成 JUnit 格式的 XML 测试报告
+pytest --log-cli-level=INFO	配置日志级别为 INFO
+pytest --setup-show	显示每个夹具的设置过程
+
+ ```
+
+
+
 ## pytest 测试用例结构
 
 ### 1. 基本的测试用例结构
