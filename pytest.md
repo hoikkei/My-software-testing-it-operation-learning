@@ -291,6 +291,17 @@ addopts：传递给 pytest 的额外命令行选项，如最大失败次数 --ma
 
 ### 5. 标记和跳过
 标记测试用例：可以通过 @pytest.mark 来标记某些测试用例，后续可以选择性地运行这些测试。
+Mark:跳过Skip及预期失败xFail
+这是pytest的内置标签,可以处理一些特殊的测试用例,不能成功的测试用例
+skip-始终跳过该测试用例
+skipif-遇到特定情况跳过该测试用例
+xfail-遇到特定情况产生一个期望失败输出
+
+skip使用场景:调试时不想运行这个用例;标记无法在某些平台上运行的测试功能;在某些版本中执行,其他版本中跳过;比如:当前的外部资源不可用时跳过,如果测试数据是从数据库中取到的,连接数据库的功能如果返回结果未成功就跳过,因此执行也都报错.
+
+解决1:添加装饰器  @pytest.mark.skip  @pytest.mark.skipif
+解决2:代码中添加跳过代码 pytest.skip(reason)
+
  ```python
 import pytest
 
@@ -314,4 +325,23 @@ def test_conditional_skip():
     assert False
  ```
 
-    
+## 运行多条用例方法
+执行包下所有的用例: pytest/py.test(包名)
+执行单独一个pytest模块:pytest 文件名.py
+运行某个模块里面某个类:pytest 文件名.py::类名
+运行某个模块里面某个类里面的方法:pytest 文件名.py::类名::方法名;
+
+## 命令行参数-使用缓存状态
+
+--lf(--last-failed)  只重新运行故障
+--lf(--failed-first) 先运行故障然后再运行其余的测试
+
+
+
+
+
+
+
+
+
+
