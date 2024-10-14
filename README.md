@@ -1,35 +1,35 @@
 # My-software-testing-learning
 
-## 1. 功能测试 (Functional Testing)
-- 目标：验证软件的每个功能是否按照需求文档或规范进行工作。
-- 重点：确保功能的正确性。测试系统的输入是否能得到预期的输出，功能是否满足业务需求。
-- 测试内容：
-用户界面
-数据库
-安全性
+## 1. Functional Testing
+- Goal: To verify that each software function works according to the requirements document or specifications.
+- Focus: Ensures the correctness of functions by testing if the system's inputs yield the expected outputs, and whether the functionality meets business requirements.
+- Test Scope:
+User Interface
+Database
+Security
 API
-- 测试方式：通常通过手动测试或者自动化测试工具来执行，使用测试用例来检查功能是否正常工作。
-- 实例：登录功能测试、购物车功能测试、支付功能测试等。
+- Test Approach: Usually performed through manual testing or automated tools, using test cases to verify if the functionality operates correctly.
+- Examples: Login function testing, shopping cart function testing, payment function testing, etc.
 
-## 2. 性能测试 (Performance Testing)
-- 目标：评估系统在不同负载条件下的表现，如响应时间、吞吐量和资源使用情况。
-- 重点：确保软件在高负载、长时间运行或高并发用户访问情况下能高效运行，保持稳定性和速度。
-测试类型：
-- 负载测试：检查系统在正常和超负荷状态下的表现。
-- 压力测试：测试系统在极限负荷下的反应，评估系统的稳定性。
-- 容量测试：验证系统能处理的最大用户数量或交易数量。
-- 实例：在高并发用户访问时，测试一个网站的响应时间和页面加载速度。
+## 2. Performance Testing
+- Goal: To evaluate the system’s performance under different load conditions, such as response time, throughput, and resource usage.
+- Focus: Ensures the software runs efficiently and remains stable under heavy load, long operational periods, or high concurrent user access.
+- Test Types:
+- Load Testing: Tests the system's behavior under normal and high load conditions.
+- Stress Testing: Assesses system performance under extreme loads to evaluate its stability.
+- Capacity Testing: Verifies the maximum number of users or transactions the system can handle.
+- Examples: Testing a website’s response time and page load speed under high concurrent user access.
 
-## 3. 自动化开发测试 (Automated Testing in Development)
-- 目标：通过编写自动化脚本，减少重复性手工测试的工作量，提高测试效率和覆盖率。
-- 重点：在开发过程中通过自动化工具持续执行测试，确保代码的连续集成和更新不会引入新的问题。
-- 自动化测试的常见类型：
-- 单元测试：测试单个功能模块或组件是否工作正常。
-- 集成测试：测试多个模块组合在一起后是否协同工作。
-- 回归测试：每次代码更改后，检查是否引入了新的错误。
-- 实例：使用工具如Selenium、JUnit、TestNG来自动化执行功能测试或回归测试。
+## 3. Automated Testing in Development
+- Goal: To reduce the workload of repetitive manual tests by writing automated scripts, improving test efficiency and coverage.
+- Focus: Continuous testing during development through automation tools, ensuring that code integration and updates do not introduce new issues.
+- Common Types of Automated Testing:
+- Unit Testing: Tests individual modules or components for proper functionality.
+- Integration Testing: Tests if multiple modules work together as expected.
+- Regression Testing: After every code change, checks if new errors have been introduced.
+- Examples: Using tools like Selenium, JUnit, or TestNG to automate functional or regression testing.
 
-区别总结
-- 功能测试：关注软件的功能是否按照预期工作，通常通过手工或自动化测试执行。
-- 性能测试：侧重于评估系统在不同负载下的表现，确保其稳定性和性能。
-- 自动化开发测试：通过自动化工具编写和执行测试脚本，提升开发和测试的效率，适用于回归测试、单元测试等。
+Summary of Differences
+- Functional Testing: Focuses on verifying if the software functions as expected, typically performed through manual or automated tests.
+- Performance Testing: Focuses on assessing the system's performance under varying load conditions, ensuring stability and efficiency.
+- Automated Testing in Development: Involves writing and running automated test scripts to enhance development and testing efficiency, suitable for regression, unit, and integration testing.
