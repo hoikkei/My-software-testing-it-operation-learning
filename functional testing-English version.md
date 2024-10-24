@@ -1,6 +1,8 @@
 ### Software testing overview
 
-#### Functional testing of test development
+### Functional testing
+#### 
+
 
 ### Chapter 1: Testing Theory
 #### 1.1 Concept of Software Testing
